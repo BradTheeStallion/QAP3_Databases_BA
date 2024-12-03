@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// Connection URL (replace with your MongoDB connection string)
 const uri = process.env.CONNECTION_STRING;
 
 // Define Book Schema
