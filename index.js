@@ -1,13 +1,16 @@
 const express = require('express');
+const { pool, createTasksTable } = require('./db');
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
-let tasks = [
-    { id: 1, description: 'Buy groceries', status: 'incomplete' },
-    { id: 2, description: 'Read a book', status: 'complete' },
-];
+// let tasks = [
+//     { id: 1, description: 'Buy groceries', status: 'incomplete' },
+//     { id: 2, description: 'Read a book', status: 'complete' },
+// ];
+
+createTasksTable();
 
 // GET /tasks - Get all tasks
 app.get('/tasks', (req, res) => {
