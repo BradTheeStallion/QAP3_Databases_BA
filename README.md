@@ -1,95 +1,36 @@
-# Express Task Manager
-This repository serves as a **template** for the Task Manager application, used in your assignment. It provides a basic Express.js app with in-memory storage to manage tasks. Your task is to extend this application by integrating it with a PostgreSQL database.
+# QAP3
 
-## Setup Instructions  
+## Q1: Express Task Manager
+This repository was generated from https://github.com/menglishca/express-tasks-template
 
-### Prerequisites  
-- [Node.js](https://nodejs.org) installed on your machine.  
-- A code editor, such as [VSCode](https://code.visualstudio.com/).
+The task uses JavaScript and PostgreSQL to create a simple task management app with a storage database.
 
-## How to Use this Template  
+Here is an example of the .env file to get the program running (you will need to fill in your own values):
 
-This repository is set up as a **GitHub template** to help you quickly create your own version of the **Task Manager**.  
+PG_USER=postgres
+PG_HOST=localhost
+PG_DATABASE=postgres
+PG_PASSWORD=password
+PG_PORT=port
+CONNECTION_STRING=connectionstring
 
-### Steps to Create Your Own Repository  
+(The last value is used for question 2.)
 
-1. **Click the "Use this template" button** at the top of this page on GitHub.  
+If you have any difficulty with the .env, don't hesitate to reach out to me.
 
-1. **Name your new repository** and choose its visibility (public or private).  
+Once you have your .env set up, run the command:
 
-1. Once your repository is created, **clone your new repo** to your local machine:  
-    ```bash  
-    git clone <your-new-repo-url>  
-    ```  
+npm start
 
-1. Navigate into the project directory and install the necessary dependencies:  
-    ```bash  
-    cd <your-new-repo-name>  
-    npm install  
-    ```  
+And then proceed to run the test cases in the comments of index.js (lines 86 - 96).
 
-1. **Run the app:**  
-    ```bash  
-    npm start  
-    ```  
-    This will start the server at `http://localhost:3000/`.  
+## Q2: MongoDB Queries
+The task uses MongoDB (via Mongoose) to create a NoSQL book-storage database.
 
-1. You can now begin working on your project, adding your own code and committing your changes as you go:  
-    ```bash  
-    git add .  
-    git commit -m "First commit"  
-    git push origin main  
-    ```  
+Be sure to replace the connection string value in your .env as outlined in Q1.
 
-## Features
+Once you have your .env set up, run the command:
 
-The application currently includes the following functionality using in-memory storage:
+node mongodb-books.js
 
-- Retrieve all tasks.
-- Add a new task.
-- Update a task's status.
-- Delete a task.
-
-Your assignment is to replace the in-memory storage with a PostgreSQL database.
-
-## API Endpoints
-
-### **Get all tasks**
-- **Method:** `GET`
-- **Endpoint:** `/tasks`
-- **Description:** Retrieves all tasks.
-
-### **Add a new task**
-- **Method:** `POST`
-- **Endpoint:** `/tasks`
-- **Body Parameters:**
-  - `id`: Unique identifier for the task (number).
-  - `description`: Description of the task (string).
-  - `status`: Status of the task (`incomplete` or `complete`).
-
-### **Update a task's status**
-- **Method:** `PUT`
-- **Endpoint:** `/tasks/:id`
-- **Body Parameters:**
-  - `status`: New status for the task (`incomplete` or `complete`).
-
-### **Delete a task**
-- **Method:** `DELETE`
-- **Endpoint:** `/tasks/:id`
-
-## Assignment Instructions
-
-### Part 1: PostgreSQL Integration
-
-1. Replace the `tasks` array in the code with a PostgreSQL database table. Ensure a method exists in the code to create that table if it does not already exist
-1. Update the application to interact with the PostgreSQL database:
-   - **GET /tasks:** Fetch all tasks from the database.
-   - **POST /tasks:** Add a new task to the database.
-   - **PUT /tasks/:id:** Update the status of a specific task in the database.
-   - **DELETE /tasks/:id:** Delete a specific task from the database.
-
-### Submission Requirements
-
-- Push all your changes to your repository.
-- Ensure your application runs correctly with `npm start`
-- Include all required functionality as specified in the assignment description.
+Link to the template repo's readme: https://github.com/menglishca/express-tasks-template/blob/main/README.md
